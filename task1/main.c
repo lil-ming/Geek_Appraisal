@@ -9,14 +9,14 @@ int main()
  		fp=fopen("E:\\task1.random parameter a","w");
 	int t = 0;
 	double x = 0 ;
-	double a , y1, y2, steplength;
+	double a , y1, y2, steplength ;
 	steplength = 0.001 ;
-	printf( "Please enter the parameter :¡°a ¡±\n" ) ;
-	scanf("%lf", &a ) ;
+	printf ( "Please enter the parameter :¡°a ¡±\n" ) ;
+	scanf ("%lf", &a ) ;
 	y1 = a*( - steplength ) ;
 	y2 = a*pow((1-steplength),2); 
-	printf("        x                      y      \n");
-	printf("  0.0000000000000         %.15lf      \n" , a);
+	printf ("        x                      y      \n" );
+	printf("  0.0000000000000         %.15lf      \n" , a );
 	for ( double y = a ; y1 - y2 > 0.001*steplength ; t++ ) 
   	{
    		x += steplength ;
