@@ -1,28 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<math.h> 
+#include <math.h> 
 int main()
-//y(n+1) = y(n)*(1-h)**t
-{	
-	int t = 0;
-	double x = 0 ;
-	double a = 1 , y1, y2, steplength;
-	steplength = 0.001 ;
-	printf("Please enter the parameter :¡°a ¡±\n") ;
-	//scanf("%lf", &a ) ;
-	y1 = a*(1-steplength) ;
-	y2 = a*pow((1-steplength),2); 
-	printf("        x                      y      \n");
-	printf("  0.0000000000000         %.15lf      \n" , a);
-	for ( double y = a ; y1 - y2 > 0.001*steplength ; t++ ) 
-  	{
-   		x += steplength ;
-		y1 = a*pow((1 - steplength + (1/2) * steplength * steplength ), t ) ;
-   		y2 = a*pow((1 - steplength + (1/2) * steplength * steplength ), t + 1 );
-   		printf("  %.15lf     %.15lf  \n", x  , y2 );
-   		
-    }	
-    printf("The final value is %.15lf" , y2 );
-	return 0;
- 
+{
+    double y[100001];                    
+	int n;
+	int t=1;
+	double h,a,i,j;
+	h=0.001;                
+	i=h*h/2;               
+	j=1-h+i;                
+	printf("y(0)=");
+	//scanf("%lf",&a);
+	a = 1 ;
+	printf("    x         y\n");
+	y[0]=a;
+	for(n=1;n>0;n++)
+	{      
+		 for(;t<n;t++)
+		 {
+		 		double k=1-h+i;
+		 	j*=k;
+		 }
+		 y[n]=a*j;
+		 printf("%.12lf  %.12lf\n",n*h,y[n]);
+		if(y[n-1]-y[n]<0.001*h)
+	 	{
+	   		break;	                  
+		} 
+	}
+		printf("The final value is %.12lf",y[n]);
+		return 0;
 }
