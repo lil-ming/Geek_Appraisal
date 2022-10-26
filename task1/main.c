@@ -12,7 +12,8 @@ int main()
 	double a , y1, y2, steplength ;
 	steplength = 0.001 ;
 	printf ( "Please enter the parameter :¡°a ¡±\n" ) ;
-	scanf ("%lf", &a ) ;
+	//scanf ("%lf", &a ) ;
+	a = 1 ; 
 	y1 = a*( - steplength ) ;
 	y2 = a*pow((1-steplength),2); 
 	printf ("        x                      y      \n" );
