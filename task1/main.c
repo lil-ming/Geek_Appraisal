@@ -26,11 +26,8 @@ int main()
    		if ( t % 100 == 0)
    		{	
  			fprintf( fp , "%lf\t%.10lf\n" , x ,y2 ) ;
-		}
-		
+		}	
     }	
     printf( "The final value is %.15lf" , y2 );
 	return 0;
-	
- 
 }
